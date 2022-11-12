@@ -1,8 +1,14 @@
 import React from 'react'
 
-function LandingPage() {
+function LandingPage({name, email}) {
   return (
-    <div>LandingPage</div>
+    <div>
+    <h1>
+    LandingPage
+    </h1>
+    <p>{name}</p>
+    <p>{email}</p>
+    </div>
   )
 }
 
