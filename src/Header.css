@@ -1,0 +1,39 @@
+.header{
+    height: 7vh;
+    width: 100vw;
+    background-color: navy;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo-image{
+    margin-left: 1vw;
+    display: flex;
+
+}
+.logo-image img{
+    height: 100%;
+    width: 100%;
+}
+.logo-image h2{
+    margin:auto 2px;
+}
+
+.button1{
+    width: 160px;
+    padding-right: 1vw;
+    
+}
+.button1 button{
+    
+    height: 80%;
+    margin-top: 0.8vh;
+    /* margin-top: 20px; */
+    /* width: 100%; */
+    background-color: navy;
+    color: white;
+    /* padding: 15px 0; */
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+}

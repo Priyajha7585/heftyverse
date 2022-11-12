@@ -4,6 +4,7 @@ import * as Yup from "yup";
 import {Link, useNavigate} from "react-router-dom";
 import {useSelector, useDispatch} from 'react-redux';
 import { formAction } from './action/form';
+import './Login.css';
 
 const SignUpSchema = Yup.object().shape({
     name: Yup.string()
@@ -141,6 +142,7 @@ function SignUp() {
                       >
                         Submit
                     </button>
+                    <p>Already a user ? <Link to='/'>LogIn here</Link></p>
                     {/*  </Link>*/}
                     </Form>
                   </div>

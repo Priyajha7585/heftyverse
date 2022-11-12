@@ -3,6 +3,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import {useSelector} from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
+import './Login.css'
 
 const LoginSchema = Yup.object().shape({
     email: Yup.string()
@@ -17,6 +18,11 @@ function Login() {
     const formData = useSelector(state=>state.formAction);
     const navigate = useNavigate();
   return (
+    <>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet" />
+
     <div className="container">
         <div className="row">
           <div className="col-lg-12">
@@ -60,7 +66,7 @@ function Login() {
                         />
   
                         <ErrorMessage
-                          component="div"
+                          component="p"
                           name="email"
                           className="invalid-feedback"
                         />
@@ -119,6 +125,7 @@ function Login() {
           </div>
         </div>
       </div>
+    </>
   )
 }
 
