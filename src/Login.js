@@ -1,6 +1,8 @@
-import React from 'react'
+import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import {useSelector} from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom';
 
 const LoginSchema = Yup.object().shape({
     email: Yup.string()
@@ -12,6 +14,8 @@ const LoginSchema = Yup.object().shape({
   });
 
 function Login() {
+    const formData = useSelector(state=>state.formAction);
+    const navigate = useNavigate();
   return (
     <div className="container">
         <div className="row">
@@ -21,11 +25,22 @@ function Login() {
               validationSchema={LoginSchema}
               onSubmit={(values) => {
                 console.log(values);
-                alert("Form is validated! Submitting the form...");
+                console.log(formData)
+                // alert("Form is validated! Submitting the form...");
+                if(formData!==null && formData.email===values.email && formData.password===values.password)
+                {
+                    navigate('/landingpage')
+                }
+                else
+                {
+                    alert("Email or password is wrong!!!")
+                    window.location.reload();
+                }
+
               }}
             >
               {({ touched, errors, isSubmitting, values }) =>
-                !isSubmitting ? (
+                !isSubmitting && (
                   <div>
                     <div className="row mb-5">
                       <div className="col-lg-12 text-center">
@@ -79,24 +94,26 @@ function Login() {
                       >
                         Submit
                       </button>
+                      <p>New user ? <Link to='/signup'>Register here</Link></p>
                     </Form>
                   </div>
-                ) : (
-                  <div>
-                    <h1 className="p-3 mt-5">Form Submitted</h1>
+                ) 
+                // : (
+                //   <div>
+                //     <h1 className="p-3 mt-5">Form Submitted</h1>
   
-                    <div className="alert alert-success mt-3">
-                      Thank for your connecting with us. Here's what we got from
-                      you !
-                    </div>
-                    <ul className="list-group">
-                      <li className="list-group-item">Email: {values.email}</li>
-                      <li className="list-group-item">
-                        Password: {values.password}
-                      </li>
-                    </ul>
-                  </div>
-                )
+                //     <div className="alert alert-success mt-3">
+                //       Thank for your connecting with us. Here's what we got from
+                //       you !
+                //     </div>
+                //     <ul className="list-group">
+                //       <li className="list-group-item">Email: {values.email}</li>
+                //       <li className="list-group-item">
+                //         Password: {values.password}
+                //       </li>
+                //     </ul>
+                //   </div>
+                // )
               }
             </Formik>
           </div>

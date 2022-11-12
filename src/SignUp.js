@@ -1,8 +1,9 @@
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import LandingPage from './LandingPage';
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
+import {useSelector, useDispatch} from 'react-redux';
+import { formAction } from './action/form';
 
 const SignUpSchema = Yup.object().shape({
     name: Yup.string()
@@ -23,6 +24,9 @@ const SignUpSchema = Yup.object().shape({
   });
 
 function SignUp() {
+    const navigate = useNavigate();
+    const formData = useSelector(state=>state.formAction)
+    const dispatch = useDispatch(formAction);
   return (
     <div className="container">
         <div className="row">
@@ -32,7 +36,10 @@ function SignUp() {
               validationSchema={SignUpSchema}
               onSubmit={(values) => {
                 console.log(values);
-                alert("Form is validated! Submitting the form...");
+                // alert("Form is validated! Submitting the form...");
+                dispatch(formAction(values));
+                // navigate('/landingpage');
+                navigate('/');
               }}
             >
               {({ touched, errors, isSubmitting, values }) =>
@@ -125,7 +132,7 @@ function SignUp() {
                         />
                       </div>
                     
-                      <Link to="/landingpage">
+                    {/*<Link to="/landingpage">*/}
                       
                       <button
                         type="submit"
@@ -133,8 +140,8 @@ function SignUp() {
                         
                       >
                         Submit
-                      </button>
-                      </Link>
+                    </button>
+                    {/*  </Link>*/}
                     </Form>
                   </div>
                 ) 
@@ -154,6 +161,9 @@ function SignUp() {
                 //     </ul>
                 //   </div>
                 //   <LandingPage name={values.name} email={values.email}/>
+                // <h1>
+                // {console.log(formData)}
+                // </h1>
                 // )
               }
             </Formik>

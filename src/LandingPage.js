@@ -1,13 +1,17 @@
-import React from 'react'
+import React from 'react';
+import {useSelector} from 'react-redux';
+// import { formAction } from './action/form';
+// import { useStore } from "react-redux";
 
-function LandingPage({name, email}) {
+function LandingPage() {
+    // const store = useStore();
+    const formData = useSelector(state=>state.formAction)
   return (
     <div>
     <h1>
     LandingPage
     </h1>
-    <p>{name}</p>
-    <p>{email}</p>
+    Welcome! {formData.name} {formData.email}
     </div>
   )
 }
