@@ -1,0 +1,62 @@
+.tag {
+    text-align: center;
+}
+  
+.slick-slide img {
+    margin: auto;
+    width: 50%;
+    height: 50%;
+}
+button{
+    width: 5.4vw;
+    height: 4vh;
+}
+.active{
+    width: 5vw;
+    background-color: white;
+    border-radius: 5px;
+    border-width: 5px;
+    border-color: white;
+}
+.inactive{
+    width: 5vw;
+    background-color: rgb(193, 191, 191);
+    border-radius: 5px;
+    border-width: 5px;
+    border-color: rgb(193, 191, 191);
+}
+
+.animate-character
+{
+   text-transform: uppercase;
+  background-image: linear-gradient(
+    -300deg,
+    /* #231557 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #fff800 100% */
+    /* #ffffff 0%,
+    #ff5e00 100% */
+    #ffffff 0%,
+    /* #c14a00 29%,
+    #ffffff 67%, */
+    #c14a00 67%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  /* text-fill-color: transparent; */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 4s alternate infinite;
+  display: inline-block;
+      font-size: 40px;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}

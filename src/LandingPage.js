@@ -1,5 +1,6 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
+import Carousel from './Carousel';
 import Header from './Header';
 // import { formAction } from './action/form';
 // import { useStore } from "react-redux";
@@ -10,6 +11,7 @@ function LandingPage() {
   return (
     <div>
     <Header />
+    <Carousel />
     {/*
     <h1>
     LandingPage

@@ -11,7 +11,7 @@ function Header() {
       </div>
       <div className='button1' style={{backgroundColor:"green"}}>
       <button type="submit">
-      Submit
+      LogOut
       </button>
       </div>
     </div>
