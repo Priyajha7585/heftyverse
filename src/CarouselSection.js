@@ -58,7 +58,7 @@ function CarouselSection() {
       <> 
       <center>
       <div style={{height:"60vh", width:"80vw", padding:"10vh 10vh 1vh 10vh"}}>
-      {images.map((image)=> image.id===imgid && <img src={image.image} style={{height:"100%", width:"100%", borderRadius:"50px", padding:"6px", background:"linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)"}}/>)}
+      {images.map((image)=> image.id===imgid && <img className='carouselImage' src={image.image} style={{height:"100%", width:"100%", borderRadius:"50px", padding:"6px", background:"linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)"}}/>)}
       </div></center>
       <div style={{display:"flex", justifyContent:"center"}}>
       {images.map((image)=><button style={{backgroundColor:"transparent", border:"none"}} onClick={()=>setImgid(image.id)}><hr className={`${image.id===imgid ? "active" : "inactive"}`}/></button>)}
