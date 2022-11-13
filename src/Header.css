@@ -1,9 +1,14 @@
+body{
+    background-image: url("https://images.unsplash.com/photo-1541280910158-c4e14f9c94a3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80");
+}
 .header{
     height: 7vh;
     width: 100vw;
-    background-color: navy;
+    /* background-color: black; */
     display: flex;
     justify-content: space-between;
+    border-bottom: 2px solid white;
+    position: fixed;
 }
 
 .logo-image{

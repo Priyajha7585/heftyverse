@@ -29,19 +29,21 @@ button{
 .animate-character
 {
    text-transform: uppercase;
-  background-image: linear-gradient(
-    -300deg,
+  /* background-image: linear-gradient(
+    -300deg, */
     /* #231557 0%,
     #44107a 29%,
     #ff1361 67%,
     #fff800 100% */
     /* #ffffff 0%,
     #ff5e00 100% */
-    #ffffff 0%,
+    /* #ffffff 0%, */
     /* #c14a00 29%,
     #ffffff 67%, */
-    #c14a00 67%
-  );
+    /* #c14a00 67% */
+  /* ); */
+  /* background-image: -webkit-linear-gradient(-45deg, #ff5000 50%, #ffffff 50%); */
+  background: -webkit-linear-gradient(-45deg, #ff5000 50%, #ffffff 50%);
   background-size: auto auto;
   background-clip: border-box;
   background-size: 200% auto;
@@ -50,7 +52,7 @@ button{
   /* text-fill-color: transparent; */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: textclip 4s alternate infinite;
+  animation: textclip 4s alternate-reverse infinite;
   display: inline-block;
       font-size: 40px;
 }
