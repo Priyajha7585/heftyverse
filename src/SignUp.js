@@ -5,6 +5,7 @@ import {Link, useNavigate} from "react-router-dom";
 import {useSelector, useDispatch} from 'react-redux';
 import { formAction } from './action/form';
 import './Login.css';
+import Nav from './Nav';
 
 const SignUpSchema = Yup.object().shape({
     name: Yup.string()
@@ -30,11 +31,7 @@ function SignUp() {
     const dispatch = useDispatch(formAction);
   return (
     <>
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet" />
-
-    
+    <Nav  text="Already a user ?" funtion="LogIn" link="/"/>
     <div className="container">
         <div className="row">
           <div className="col-lg-12">
@@ -52,13 +49,13 @@ function SignUp() {
               {({ touched, errors, isSubmitting, values }) =>
                 !isSubmitting && (
                   <div>
-                    <div className="row mb-5">
-                      <div className="col-lg-12 text-center">
-                        <h1 className="mt-5">SignUp Form</h1>
+                    
+                    <Form>
+                    <div>
+                      <div>
+                        <h1>SignUp Form</h1>
                       </div>
                     </div>
-                    <Form>
-
                     <div className="form-group">
                         <label htmlFor="name">Name</label>
                         <Field
@@ -143,7 +140,7 @@ function SignUp() {
                       
                       <button
                         type="submit"
-                        className="btn btn-primary btn-block mt-4"
+                        className="btn1"
                         
                       >
                         Submit

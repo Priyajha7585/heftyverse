@@ -1,10 +1,9 @@
 import React, {useState, useEffect} from 'react';
-import {useSelector} from 'react-redux';
-import {useNavigate} from 'react-router-dom';
-import './Header.css';
-import logo from './assets/channels4_profile1.jpg'
+import { useNavigate } from 'react-router-dom';
+import logo from './assets/channels4_profile1.jpg';
+import './Nav.css';
 
-function Header() {
+function Nav({text, funtion, link}) {
   const [width, setWidth] = useState(window.innerWidth);
   useEffect(() => {
     function handleResize() {
@@ -14,7 +13,6 @@ function Header() {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
-  const formData = useSelector(state=>state.formAction)
   const navigate = useNavigate();
   return (
     <>
@@ -26,10 +24,8 @@ function Header() {
       <h2>&nbsp;HEFTYVERSE</h2>
       </div>
       <div className='button1'>
-      <h3>Welcome! {formData.name}</h3>
-      <button type="submit" onClick={()=>{
-        navigate('/');
-      }}>LogOut</button>
+      <h3>{text}</h3>
+      <button type="submit" onClick={()=>navigate(link)}>{funtion}</button>
       </div>
     </div>
     :
@@ -39,10 +35,8 @@ function Header() {
       <h4>&nbsp;HEFTYVERSE</h4>
       </div>
       <div className='button2'>
-      <h5>Welcome! {formData.name}</h5>
-      <button type="submit" onClick={()=>{
-        navigate('/');
-      }} style={{margin:"5px 10px 5px 5px"}}>LogOut</button>
+      <h5>{text}</h5>
+      <button type="submit" style={{margin:"5px 10px 5px 5px"}} onClick={()=>navigate(link)}>{funtion}</button>
       </div>
     </div>
     }</>
@@ -50,4 +44,4 @@ function Header() {
   )
 }
 
-export default Header
+export default Nav

@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+body{
+    background-image: url("https://images.unsplash.com/photo-1541280910158-c4e14f9c94a3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80");
+    font-family: 'Poppins', sans-serif;
+}
+.header{
+    height: 7vh;
+    width: 100vw;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid white;
+    position: fixed;
+    
+}
+
+.logo-image{
+    margin-left: 1vw;
+    display: flex;
+
+}
+.logo-image img{
+    height: 100%;
+    width: 100%;
+}
+.logo-image h2{
+    margin:auto 2px;
+    color: white;
+}
+
+.button1{
+    width: 30vw;
+    padding-right: 1vw;
+    display: flex;
+    justify-content: space-evenly;
+}
+.button1 h3{
+    margin-top: auto;
+    margin-bottom: auto;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+.button1 button{
+    /* text-align: center; */
+    height: 80%;
+    width: 40%;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    /* margin-top: 20px; */
+    /* width: 100%; */
+    background-color: transparent;
+    color: white;
+    /* padding: 15px 0; */
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    border: 2px solid white;
+}
+.button1 button:hover{
+    color: black;
+    background-color: white;
+}
+
+
+
+.logo-image h4{
+    margin:auto 2px;
+    color: white;
+}
+.button2{
+    width: 60vw;
+    padding-right: 1vw;
+    display: flex;
+    justify-content: space-evenly;
+}
+.button2 h5{
+    margin-top: auto;
+    margin-bottom: auto;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+.button2 button{
+    /* text-align: center; */
+    width: 40%;
+    height: 80%;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    /* margin-top: 20px; */
+    /* width: 100%; */
+    background-color: transparent;
+    color: white;
+    /* padding: 15px 0; */
+    font-size: 10px;
+    font-weight: 600;
+    border-radius: 5px;
+    border: 2px solid white;
+}
+.button2 button:hover{
+    color: black;
+    background-color: white;
+}

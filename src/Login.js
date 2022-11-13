@@ -4,6 +4,7 @@ import * as Yup from "yup";
 import {useSelector} from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import './Login.css'
+import Nav from './Nav';
 
 const LoginSchema = Yup.object().shape({
     email: Yup.string()
@@ -20,7 +21,7 @@ function Login() {
   return (
     <>
 
-
+    <Nav text="New user ?" funtion="SignUp" link="/signup"/>
     <div className="container">
         <div className="row">
           <div className="col-lg-12">
@@ -46,12 +47,13 @@ function Login() {
               {({ touched, errors, isSubmitting, values }) =>
                 !isSubmitting && (
                   <div>
+                    
+                    <Form>
                     <div className="row mb-5">
-                      <div className="col-lg-12 text-center">
+                      <div className="title">
                         <h1 className="mt-5">Login Form</h1>
                       </div>
                     </div>
-                    <Form>
                       <div className="form-group">
                         <label htmlFor="email">Email</label>
                         <Field
@@ -94,7 +96,7 @@ function Login() {
   
                       <button
                         type="submit"
-                        className="btn btn-primary btn-block mt-4"
+                        className="btn1"
                       >
                         Submit
                       </button>
