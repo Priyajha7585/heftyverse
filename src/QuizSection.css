@@ -243,12 +243,12 @@
 
 
 
-.quizcards, .quizcards1 {
-    animation-duration: 3s;
-    animation-name: slidein;
+.quizcards {
+    animation-duration: 2s;
+    animation-name: slidein1;
     /* animation-iteration-count: infinite; */
   }
-  @keyframes slidein {
+  @keyframes slidein1 {
     from {
       margin-top: 0%;
       /* width: 300%; */
@@ -256,6 +256,23 @@
   
     to {
       margin-top: -15%;
+      /* width: 100%; */
+    }
+  }
+
+.quizcards1 {
+    animation-duration: 2s;
+    animation-name: slidein2;
+    /* animation-iteration-count: infinite; */
+  }
+  @keyframes slidein2 {
+    from {
+      margin-top: 0%;
+      /* width: 300%; */
+    }
+  
+    to {
+      margin-top: -45%;
       /* width: 100%; */
     }
   }
