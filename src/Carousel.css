@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
 .tag {
     text-align: center;
 }
@@ -29,6 +30,7 @@ button{
 
 .animate-character
 {
+  font-family: 'Bree Serif', serif;
    text-transform: uppercase;
   /* background-image: linear-gradient(
     -300deg, */

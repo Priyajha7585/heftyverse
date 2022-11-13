@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import './QuizSection.css';
 import img1 from './assets/12WCF4D0-ineonlife-game-shaped-neon-signs-neon.jpg';
 import img2 from './assets/609d3fbafedbcd581b25f845_1620918202171.jpg';
@@ -25,9 +25,21 @@ const data = [
     }
 ]
 function QuizSection() {
+    const [width, setWidth] = useState(window.innerWidth);
+    useEffect(() => {
+      function handleResize() {
+        setWidth(window.innerWidth);
+      }
+  
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+    }, []);
   return (
     <>
-    <center>
+    {
+        width > 767 ?
+        <>
+        <center>
     <div className='quizpart'>
     <h2 className='participate'>Participate in Trivias and earn +7 Entries</h2>
     </div>
@@ -42,6 +54,27 @@ function QuizSection() {
             )}
         </div>
     </center>
+        </>
+        :
+        <>
+        <center>
+    <div className='quizpart1'>
+    <h2 className='participate1'>Participate in Trivias and earn +7 Entries</h2>
+    </div>
+        <div className='quizcards1'>
+            {data.map((image)=>
+
+                <div className='card1'>
+                    <img src={image.img}/>
+                    <h3>{image.title}</h3>
+                    <p>{image.desc}</p>
+                </div>
+            )}
+        </div>
+    </center>
+        </>
+    }
+    
     </>
   )
 }
